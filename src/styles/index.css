@@ -110,8 +110,4 @@ body {
 
 .floating {
  animation: float 3s ease-in-out infinite;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bb45b11 (Setup Tailwind CSS for production build)
