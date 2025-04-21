@@ -92,10 +92,6 @@ body {
  left: 0;
  width: 100%;
  height: 40vh;
-<<<<<<< HEAD
-=======
- background-image: url("/images/common/bg.png");
->>>>>>> bb45b11 (Setup Tailwind CSS for production build)
  background-size: cover;
  background-repeat: no-repeat;
 }
