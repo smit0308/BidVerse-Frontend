@@ -39,7 +39,7 @@ export const menulists = [
 export const categorylists = [
   {
     id: 1,
-    image: "../images/category/c1.png",
+    image: "https://drive.google.com/uc?export=view&id=184Du6sAlWbFO1n4VAdEpLRXqTFMEsURG",
     title: "watches",
   },
   {

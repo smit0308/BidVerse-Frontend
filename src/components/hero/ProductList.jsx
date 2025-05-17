@@ -99,6 +99,7 @@ export const ProductList = ({ products, isHomePage = false }) => {
           {/* On Stock Products Section */}
           {currentOnStockProducts.length > 0 && (
             <div className="mb-12">
+              <br />
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">
                 Available for Bidding
               </h3>

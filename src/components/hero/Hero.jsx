@@ -21,31 +21,10 @@ export const Hero = () => {
             </Title>
             <Body className="leading-7 text-gray-200 my-8">
             BidVerse — A real-time auction platform connecting buyers and sellers seamlessly.Live bidding, product listings, and wallet-based transactions in a secure environment. Empowering users with dynamic roles, smart notifications, and transparent auction outcomes.
-            </Body>
-            <SearchBox />
-            <div className="flex items-center gap-8 my-8">
-              <div>
-                <Title level={4} className=" text-white">
-                  842M
-                </Title>
-                <Body className="leading-7 text-gray-200">Total Product</Body>
-              </div>
-              <div>
-                <Title level={4} className=" text-white">
-                  842M
-                </Title>
-                <Body className="leading-7 text-gray-200">Total Auction</Body>
-              </div>
-              <div>
-                <Title level={4} className=" text-white">
-                  54
-                </Title>
-                <Body className="leading-7 text-gray-200">Total Category</Body>
-              </div>
-            </div>
+            </Body> 
           </div>
           <div className="w-full md:w-1/2 my-16 relative py-16">
-            <img src="../images/home/banner-3.png" alt="" />
+            <img src="https://res.cloudinary.com/dn6tm7w4q/image/upload/v1747476196/Photos/hd65spkva3tmmhtna3wo.png" alt="" />
             <div className="horiz-move absolute md:top-28 top-8 left-0">
               <Box title="Proof of quality" />
             </div>

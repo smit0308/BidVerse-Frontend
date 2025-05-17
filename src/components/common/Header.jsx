@@ -66,9 +66,9 @@ export const Header = () => {
             <div className="flex items-center gap-14">
               <div>
                 {isHomePage && !isScrolled ? (
-                  <img src="../images/common/header-logo.png" alt="LogoImg" className="h-11" />
+                  <img src="https://res.cloudinary.com/dn6tm7w4q/image/upload/v1747476047/Photos/bssetjpr5ag43vgmhrof.png" alt="LogoImg" className="h-11" />
                 ) : (
-                  <img src="../images/common/header-logo2.png" alt="LogoImg" className="h-11" />
+                  <img src="https://res.cloudinary.com/dn6tm7w4q/image/upload/v1747475918/o1liesn77gqfbi5tpsyf.png" alt="LogoImg" className="h-11" />
                 )}
               </div>
               <div className="hidden lg:flex items-center justify-between gap-8">
