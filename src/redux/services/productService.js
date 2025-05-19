@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BACKEND_URL } from "../../utils/url";
 
-export const PRODUCT_URL = `${BACKEND_URL}/product/`;
+export const PRODUCT_URL = `${BACKEND_URL}/product`;
 
 const createProduct = async (formData) => {
     // Log form data for debugging
