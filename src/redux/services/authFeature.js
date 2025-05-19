@@ -27,8 +27,8 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use((response) => response, (error) => {
     if (error.response?.status === 401) {
         // Handle unauthorized access
-        
-        window.location.href = "/";
+        localStorage.removeItem("user");
+        window.location.href = "/login";
     } else if (error.response?.status === 403) {
         // Handle email verification needed
         localStorage.removeItem("user");
