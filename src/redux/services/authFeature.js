@@ -1,17 +1,45 @@
 import axios from "axios";
 import { BACKEND_URL } from "../../utils/url";
 
+// Create a new axios instance with default config
+const api = axios.create({
+    baseURL: BACKEND_URL,
+    withCredentials: true,
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
+
+// Add a request interceptor to handle token
+api.interceptors.request.use((config) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user && user.token) {
+        config.headers.Authorization = `Bearer ${user.token}`;
+    }
+    return config;
+}, (error) => {
+    return Promise.reject(error);
+});
+
+// Add a response interceptor to handle errors
+api.interceptors.response.use((response) => response, (error) => {
+    if (error.response?.status === 401) {
+        // Handle unauthorized access
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+    }
+    return Promise.reject(error);
+});
+
 export const AUTH_URL = `${BACKEND_URL}/users/`;
 
 const register = async (userData) => {
-    const response = await axios.post(AUTH_URL + "register", userData);
+    const response = await api.post("users/register", userData);
     return response.data;
 };
 
 const login = async (userData) => {
-    const response = await axios.post(AUTH_URL + "login", userData, {
-        withCredentials: true
-      });
+    const response = await api.post("users/login", userData);
     return response.data;
 };
 
@@ -21,12 +49,12 @@ const logOut = async () => {
 };
 
 const getLoginStatus = async () => {
-    const response = await axios.get(AUTH_URL + "loggedin", { withCredentials: true });
+    const response = await api.get("users/loggedin");
     return response.data;
 };
 
 const getuserProfile = async () => {
-    const response = await axios.get(AUTH_URL + "getuser", { withCredentials: true });
+    const response = await api.get("users/getuser");
     return response.data;
 };
 
