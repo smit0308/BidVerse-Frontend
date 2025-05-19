@@ -7,7 +7,9 @@ const api = axios.create({
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json'
-    }
+    },
+    xsrfCookieName: 'token',
+    xsrfHeaderName: 'X-CSRF-Token'
 });
 
 // Add a request interceptor to handle token
@@ -27,6 +29,10 @@ api.interceptors.response.use((response) => response, (error) => {
         // Handle unauthorized access
         localStorage.removeItem("user");
         window.location.href = "/login";
+    } else if (error.response?.status === 403) {
+        // Handle email verification needed
+        localStorage.removeItem("user");
+        window.location.href = "/verify-email";
     }
     return Promise.reject(error);
 });
@@ -39,8 +45,14 @@ const register = async (userData) => {
 };
 
 const login = async (userData) => {
-    const response = await api.post("users/login", userData);
-    return response.data;
+    try {
+        const response = await api.post("users/login", userData);
+        // Store user data including token
+        localStorage.setItem("user", JSON.stringify(response.data));
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
 };
 
 const logOut = async () => {
