@@ -54,7 +54,7 @@ Ensure you have **Node.js** (v14 or higher) and **npm** installed on your system
 
 ### 🔽 Clone the Repository
 ```bash
-git clone <your-frontend-repo-url>
+git clone https://github.com/smit0308/BidVerse-Frontend
 cd BidVerse-Frontend
 ```
 
