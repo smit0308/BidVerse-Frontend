@@ -77,6 +77,11 @@ The application will be available at **http://localhost:5173/** 🌐
 
 ---
 
+## 🔗 Backend Repository
+- **BidVerse-Backend:** [https://github.com/smit0308/BidVerse-Backend](https://github.com/smit0308/BidVerse-Backend)
+
+---
+
 ## 🤝 Contribution
 Want to improve this project? Feel free to fork the repository and submit a PR! 🚀
 
